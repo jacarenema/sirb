@@ -51,10 +51,15 @@ $(function() {
         nome = $("#nome").val()
         local = $("#local").val()
         registro = $("#registro").val()
-        if(registro.length > 8){
+        if(registro.length > 8){            
             $("#mensagem-enviando").hide()
+            $("#registro-erro").hide()
             $("#mensagem-salvo").show()
             saveData(data,nome,local,registro)
+            $("#data").val("")
+            $("#nome").val("")
+            $("#local").val("")
+            $("#registro").val("")
         } else {
             $("#mensagem-enviando").hide()
             $("#registro-erro").show()
