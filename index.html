@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="style.css">
     <title>FRA - Ficha de Registro de Anomalia</title>
 </head>
 <body>
     <div class="painel">
         <div class="bg-header">
-            FRA P57
+            FRA P-57
         </div>
         <div class="container">
             <form class="ui form" data-parsley-validate>
@@ -34,29 +33,32 @@
                     <label>Registro</label>
                     <textarea id="registro" cols="30" rows="5" required=""></textarea>
                 </div>
+                <div id="registro-erro" class="ui error message">
+                    <div class="header">
+                    <p>Favor inserir mais informações no registro.
+                  </p></div>
+                </div>
                 <button id="submit" class="ui button" type="button">Enviar</button>
 
-                    <div class="ui icon message hidden">
-                        <i class="notched circle loading icon"></i>
-                        <div class="content">
-                            <div class="header">
-                            Enviando seu registro
-                            </div>
-                            <p>Aguarde um momento.</p>
+                <div id="mensagem-enviando" class="ui icon message hidden">
+                    <i class="notched circle loading icon"></i>
+                    <div class="content">
+                        <div class="header">
+                        Enviando seu registro
                         </div>
+                        <p>Aguarde um momento.</p>
                     </div>
+                </div>
                 
-                <div class="ui success message">
-                    <i class="close icon"></i>
+                <div id="mensagem-salvo" class="ui success message">
                     <div class="header">
                         Seu registro foi enviado com sucesso.
                     </div>
-                    <p>Seu registro passará pela etapa de aprovação antes de entrar no sistema.</p>
+                    <p>Obrigado pela participação.</p>
                 </div>
 
                 
                 <div class="ui error message">
-                    <i class="close icon"></i>
                     <div class="header">
                       Ocorreu um erro ao enviar sua solicitação.
                     </div>
@@ -68,10 +70,8 @@
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
     <script src="script.js"></script>
 </body>

@@ -1,23 +1,22 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: #ecf0f1;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*background-color: #ecf0f1;*/
 }
 h2 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .painel {
     background-color: white;
-    max-width: 80vw;
+    width: 100%;
+    max-width: 650px;
     margin: auto;
-    margin-top: 30px;
     padding-bottom: 60px;
     border-radius: 5px;
     overflow: hidden;
-    -moz-box-shadow:    3px 3px 15px 6px #ccc;
-    -webkit-box-shadow: 3px 3px 15px 6px #ccc;
-    box-shadow:         3px 3px 15px 6px #ccc;
+    -moz-box-shadow:    1px 1px 10px 1px #ccc;
+    -webkit-box-shadow: 1px 1px 10px 1px #ccc;
+    box-shadow:         1px 1px 10px 1px #ccc;
 }
 .container {
     padding: 0 30px;
@@ -70,5 +69,14 @@ h2 {
     .bg-header {
         text-align: center;
         padding-left: 0;
+    }
+}
+@media (min-width: 720px){
+    body {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(/sirb/imagens/bg.jpg);
+        background-size: cover;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        display: flex;
     }
 }

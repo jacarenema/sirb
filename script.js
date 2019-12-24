@@ -1,12 +1,5 @@
-moment.locale("pt-br");
-
-Parsley.addMessages('pt-br', {
-    required:       "Este campo é obrigatório."
-});
-  
-Parsley.setLocale('pt-br');
-
-$( function() {
+$(function() {
+    moment.locale("pt-br");
     var locais = [
         "Praça de Máquinas 2º Piso",
         "Praça de Máquinas 3º Piso",
@@ -50,20 +43,22 @@ $( function() {
     };
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
-
     function saveData(data, nome, local, registro) {
         firebase.database().ref('registros/').push({data,nome,local,registro});
     }
     $("#submit").click(function(){
+        $("mensagem-enviando").show()
         data = $("#data").val()
         nome = $("#nome").val()
         local = $("#local").val()
         registro = $("#registro").val()
         if(registro.length > 8){
-            console.log("Salvo")
+            $("#mensagem-enviando").hide()
+            $("#mensagem-salvo").show()
             saveData(data,nome,local,registro)
         } else {
-            console.log("Erro")
+            $("#mensagem-enviando").hide()
+            $("#registro-erro").show()
         }
     })
   } );
