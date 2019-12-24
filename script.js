@@ -42,7 +42,6 @@ $(function() {
         measurementId: "G-7GFPGZNQLN"
     };
     firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
     function saveData(data, nome, local, registro) {
         firebase.database().ref('registros/').push({data,nome,local,registro});
     }
