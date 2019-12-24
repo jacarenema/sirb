@@ -1,0 +1,74 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #ecf0f1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.painel {
+    background-color: white;
+    max-width: 80vw;
+    margin: auto;
+    margin-top: 30px;
+    padding-bottom: 60px;
+    border-radius: 5px;
+    overflow: hidden;
+    -moz-box-shadow:    3px 3px 15px 6px #ccc;
+    -webkit-box-shadow: 3px 3px 15px 6px #ccc;
+    box-shadow:         3px 3px 15px 6px #ccc;
+}
+.container {
+    padding: 0 30px;
+    min-height: 600px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.bg-header {
+    background-image: url(/sirb_movel/imagens/bg-header.gif);
+    background-repeat: no-repeat;
+    background-position: -40px top;
+
+    height: 110px;
+    padding-top: 25px;
+    padding-left: 100px;
+
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.logo {
+    max-width: 100px;
+}
+.title {
+    margin-bottom: 20px;
+}
+.ui.form {
+    margin: 40px 0;
+    width: 350px;
+}
+
+.ui.form .field>label {
+    color: #7f8c8d
+}
+
+.ui.button {
+    background-color: rgb(0,133,66);
+    color: white;
+}
+@media (max-width: 720px) {
+    .painel {
+        max-width: 100%;
+        margin-top: 0;
+        min-height: 100vh;
+    }
+    .bg-header {
+        text-align: center;
+        padding-left: 0;
+    }
+}
