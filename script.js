@@ -56,9 +56,7 @@ $(function() {
             $("#registro-erro").hide()
             $("#mensagem-salvo").show()
             saveData(data,nome,local,registro)
-            $("#data").val("")
             $("#nome").val("")
-            $("#local").val("")
             $("#registro").val("")
         } else {
             $("#mensagem-enviando").hide()
