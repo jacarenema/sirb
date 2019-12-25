@@ -1,0 +1,15 @@
+{
+  "short_name": "FRA P-57",
+  "name": "Folha de Registro de Anomalia da P-57",
+  "icons": [
+    {
+      "src": "./imagens/logo.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#008542",
+  "background_color": "#008542"
+}
