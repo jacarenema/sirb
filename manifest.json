@@ -3,7 +3,7 @@
   "name": "Folha de Registro de Anomalia da P-57",
   "icons": [
     {
-      "src": "./imagens/logo.png",
+      "src": "./imagens/fav.png",
       "sizes": "144x144",
       "type": "image/png"
     }
