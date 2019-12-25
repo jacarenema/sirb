@@ -66,6 +66,7 @@ h2 {
         max-width: 100%;
         margin: 0 auto;
         min-height: 100vh;
+        border-radius: 0;
     }
     .bg-header {
         text-align: center;
