@@ -10,7 +10,7 @@ h2 {
     background-color: white;
     width: 100%;
     max-width: 650px;
-    margin: auto;
+    margin: 60px auto;
     padding-bottom: 60px;
     border-radius: 5px;
     overflow: hidden;
@@ -63,7 +63,7 @@ h2 {
 @media (max-width: 720px) {
     .painel {
         max-width: 100%;
-        margin-top: 0;
+        margin: 0 auto;
         min-height: 100vh;
     }
     .bg-header {
