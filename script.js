@@ -43,9 +43,13 @@ $(function() {
     };
     firebase.initializeApp(firebaseConfig);
     function saveData(data, nome, local, registro) {
-        var ref = firebase.database().ref('registros/').push({data,nome,local,registro}, function(error){
-            console.log(error)
-            if(error){$("#mensagem-salvo").show()}else{$("#registro-erro-envio").show()}
+        var ref = firebase.database().ref('registros/').push({data,nome,local,registro}, function(){
+            $("#mensagem-salvo").show()
+            $("#mensagem-enviando").hide()
+        }).catch(function(e){
+            console.log(e)
+            $("#registro-erro-envio").show()
+            $("#mensagem-enviando").hide()
         });
     }
     $("#submit").click(function(){
@@ -55,7 +59,6 @@ $(function() {
         var local = $("#local").val()
         var registro = $("#registro").val()
         if(registro.length > 8){            
-            $("#mensagem-enviando").hide()
             $("#registro-erro").hide()
             $("#registro-erro-envio").hide()
             saveData(data,nome,local,registro)
