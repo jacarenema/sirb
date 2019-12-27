@@ -43,9 +43,10 @@ $(function() {
     };
     firebase.initializeApp(firebaseConfig);
     function saveData(data, nome, local, registro) {
-        var ref = firebase.database().ref('registros/').push({data,nome,local,registro});
-        console.log(ref);
-        if(ref.key){$("#mensagem-salvo").show()}else{$("#registro-erro-envio").show()}
+        var ref = firebase.database().ref('registros/').push({data,nome,local,registro}, function(error){
+            console.log(error)
+            if(error){$("#mensagem-salvo").show()}else{$("#registro-erro-envio").show()}
+        });
     }
     $("#submit").click(function(){
         $("mensagem-enviando").show()
