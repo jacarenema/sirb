@@ -53,7 +53,7 @@ $(function() {
         });
     }
     $("#submit").click(function(){
-        $("mensagem-enviando").show()
+        $("#mensagem-enviando").show()
         var data = $("#data").val()
         var nome = $("#nome").val()
         var local = $("#local").val()
