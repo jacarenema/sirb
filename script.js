@@ -43,9 +43,9 @@ $(function() {
     };
     firebase.initializeApp(firebaseConfig);
     function saveData(data, nome, local, registro) {
-        var key = firebase.database().ref('registros/').push({data,nome,local,registro});
-        console.log(key);
-        if(key){$("#mensagem-salvo").show()}else{$("#registro-erro-envio").show()}
+        var ref = firebase.database().ref('registros/').push({data,nome,local,registro});
+        console.log(ref);
+        if(ref.key){$("#mensagem-salvo").show()}else{$("#registro-erro-envio").show()}
     }
     $("#submit").click(function(){
         $("mensagem-enviando").show()
