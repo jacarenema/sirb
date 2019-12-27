@@ -46,6 +46,8 @@ $(function() {
         var ref = firebase.database().ref('registros/').push({data,nome,local,registro}, function(){
             $("#mensagem-salvo").show()
             $("#mensagem-enviando").hide()
+            $("#nome").val("")
+            $("#registro").val("")
         }).catch(function(e){
             console.log(e)
             $("#registro-erro-envio").show()
@@ -62,8 +64,6 @@ $(function() {
             $("#registro-erro").hide()
             $("#registro-erro-envio").hide()
             saveData(data,nome,local,registro)
-            $("#nome").val("")
-            $("#registro").val("")
         } else {
             $("#mensagem-enviando").hide()
             $("#registro-erro").show()
