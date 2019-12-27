@@ -43,18 +43,20 @@ $(function() {
     };
     firebase.initializeApp(firebaseConfig);
     function saveData(data, nome, local, registro) {
-        firebase.database().ref('registros/').push({data,nome,local,registro});
+        var key = firebase.database().ref('registros/').push({data,nome,local,registro});
+        console.log(key);
+        if(key){$("#mensagem-salvo").show()}else{$("#registro-erro-envio").show()}
     }
     $("#submit").click(function(){
         $("mensagem-enviando").show()
-        data = $("#data").val()
-        nome = $("#nome").val()
-        local = $("#local").val()
-        registro = $("#registro").val()
+        var data = $("#data").val()
+        var nome = $("#nome").val()
+        var local = $("#local").val()
+        var registro = $("#registro").val()
         if(registro.length > 8){            
             $("#mensagem-enviando").hide()
             $("#registro-erro").hide()
-            $("#mensagem-salvo").show()
+            $("#registro-erro-envio").hide()
             saveData(data,nome,local,registro)
             $("#nome").val("")
             $("#registro").val("")
