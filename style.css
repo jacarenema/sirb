@@ -76,9 +76,7 @@ h2 {
 @media (min-width: 720px){
     body {
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(/fra/imagens/bg.jpg);
-        background-size: cover;
+        background-size: auto;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-        display: flex;
     }
 }
