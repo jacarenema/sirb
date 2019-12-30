@@ -43,6 +43,8 @@ $(function() {
         } else {
             $("#registro-erro").show().html("Desculpe, não é possível se conectar ao servidor. Confirme se você está conectado em uma Rede Petrobras.")
         }
+    }).fail(function() {
+        $("#registro-erro").show().html("Desculpe, não é possível se conectar ao servidor. Confirme se você está conectado em uma Rede Petrobras.")
     })
     $("#local").append(function(){
         return locais.map(function(local){
