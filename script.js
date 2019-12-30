@@ -26,7 +26,7 @@ $(function() {
         "Outro (especificar no registro)"
     ]
     var firebaseConfig = {}
-    $.ajax({url: "http://ip-api.com/json"}).done(function(data){
+    $.ajax({url: "https://ip-api.com/json"}).done(function(data){
         if(data.isp == "Petróleo Brasileiro S/A - Petrobras"){
             $("#submit").show()
             firebaseConfig = {
