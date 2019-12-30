@@ -26,8 +26,8 @@ $(function() {
         "Outro (especificar no registro)"
     ]
     var firebaseConfig = {}
-    $.ajax({url: "https://ip-api.com/json"}).done(function(data){
-        if(data.isp == "Petróleo Brasileiro S/A - Petrobras"){
+    $.ajax({url: "https://extreme-ip-lookup.com/json"}).done(function(data){
+        if(data.isp == "Petroleo Brasileiro S.a. - Petrobras"){
             $("#submit").show()
             firebaseConfig = {
                 apiKey: "AIzaSyCyfUdgBGLGGY8VC5e0RlQRG-Uw4tsBL_E",
