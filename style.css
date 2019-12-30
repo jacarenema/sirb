@@ -6,6 +6,9 @@ body{
 h2 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+#submit {
+    display: none;
+}
 .painel {
     background-color: white;
     width: 100%;
