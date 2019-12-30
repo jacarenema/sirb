@@ -25,23 +25,31 @@ $(function() {
         "Proa do Navio",
         "Outro (especificar no registro)"
     ]
+    var firebaseConfig = {}
+    $.ajax({url: "http://ip-api.com/json"}).done(function(data){
+        if(data.isp == "Petróleo Brasileiro S/A - Petrobras"){
+            $("#submit").show()
+            firebaseConfig = {
+                apiKey: "AIzaSyCyfUdgBGLGGY8VC5e0RlQRG-Uw4tsBL_E",
+                authDomain: "sirb-petrobras.firebaseapp.com",
+                databaseURL: "https://sirb-petrobras.firebaseio.com",
+                projectId: "sirb-petrobras",
+                storageBucket: "sirb-petrobras.appspot.com",
+                messagingSenderId: "537077234086",
+                appId: "1:537077234086:web:1f2c8518d2a806b6f0b767",
+                measurementId: "G-7GFPGZNQLN"
+            };
+            firebase.initializeApp(firebaseConfig);
+        } else {
+            $("#registro-erro").show().html("Desculpe, não é possível se conectar ao servidor. Confirme se você está conectado em uma Rede Petrobras.")
+        }
+    })
     $("#local").append(function(){
         return locais.map(function(local){
             return '<option>'+local+'</option>'
         })
     })
     $("#data").val(moment().format("DD/MM/YYYY"))
-    var firebaseConfig = {
-        apiKey: "AIzaSyCyfUdgBGLGGY8VC5e0RlQRG-Uw4tsBL_E",
-        authDomain: "sirb-petrobras.firebaseapp.com",
-        databaseURL: "https://sirb-petrobras.firebaseio.com",
-        projectId: "sirb-petrobras",
-        storageBucket: "sirb-petrobras.appspot.com",
-        messagingSenderId: "537077234086",
-        appId: "1:537077234086:web:1f2c8518d2a806b6f0b767",
-        measurementId: "G-7GFPGZNQLN"
-    };
-    firebase.initializeApp(firebaseConfig);
     function saveData(data, nome, local, registro) {
         var ref = firebase.database().ref('registros/').push({data,nome,local,registro}, function(){
             $("#mensagem-salvo").show()
